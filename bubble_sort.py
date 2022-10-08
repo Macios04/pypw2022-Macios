@@ -11,7 +11,7 @@ def bubble_sort(items):
     return items
 
 if __name__ == "__main__":
-    result = bubble_sort([100, 90, 29, 10, 1])
+    result = bubble_sort([100, 20, 2, 4, 0, 1, 22,])
     print(result)
 
 

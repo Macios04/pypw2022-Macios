@@ -1,4 +1,4 @@
-def dec2bin(x):
+def bin2dec(x):
     n = len(x)
     s = 0
     for i in range(n):
@@ -8,4 +8,5 @@ def dec2bin(x):
 
 
 if __name__ == "__main__":
-    print(dec2bin("1111"))
+    x = str(input("Enter: "))
+    print(bin2dec(x))

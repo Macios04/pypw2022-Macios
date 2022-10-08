@@ -1,10 +1,10 @@
 def bin2dec(x):
     n = len(x)
-    s = 0
+    result = 0
     for i in range(n):
         bit = int(x[i])
-        s += bit * 2 ** (n - 1 - i)
-    return s
+        result += bit * 2 ** (n - 1 - i)
+    return result
 
 
 if __name__ == "__main__":

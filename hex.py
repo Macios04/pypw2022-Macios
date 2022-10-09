@@ -19,5 +19,5 @@ def dec2hex(x):
     return result
 
 if __name__ == "__main__":
-    print(dec2hex(12234))
+    print(dec2hex(255))
 

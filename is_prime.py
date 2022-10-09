@@ -11,5 +11,8 @@ def is_prime(n):
     return True
 
 if __name__ == "__main__":
-    print(is_prime(97))
+    primes = [
+        x for x in range(200) if is_prime(x)
+    ]
+    print(primes)
 

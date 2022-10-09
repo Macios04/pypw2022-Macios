@@ -9,3 +9,13 @@ def oct2dec(x):
 
 if __name__ == "__main__":
     print(oct2dec("13042"))
+    pass
+
+def oct2dec(x):
+    result = 0
+    for i, digit in enumerate(reversed(x)):
+        result += int(digit) * 8 ** i
+    return result
+
+if __name__ == "__main__":
+    print(oct2dec("13042"))

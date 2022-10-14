@@ -37,21 +37,23 @@ if __name__ == "__main__":
 def filter_nums(list):       #nie działa
     i = 0
     result = []
-    while i < len(list):
+    for i in range(len(list)):
         if list[i] % 3 != 0:
             result.append(list[i])
             i += 1
+        else:
+            pass
     return result
 
 if __name__ == "__main__":
-    #print(filter_nums([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+    print(filter_nums([3, 4, 5, 7, 6, 9, 8, 22, 33, 69]))
     pass
 
 def generate_evans(start, end):  #nie dziala
     i = 0
     list1 = list(range(start, end))
     result = []
-    while list1[i] < len(list1):
+    for i in range(len(list1)):
         if list1[i] % 2 == 0:
             result.append(list1[i])
             i += 1
@@ -60,9 +62,20 @@ def generate_evans(start, end):  #nie dziala
     return result
 
 if __name__ == "__main__":
-    #print(generate_evans(1, 12))
+    print(generate_evans(1, 12))
     pass
 
+def compute(nums, n, m):
+    i = 0
+    result = []
+    for i in range(len(nums)):
+        result.append((nums[i] ** n) % m)
+        i += 1
+    return result
+
+if __name__ == "__main__":
+    print(compute([2, 3, 4, 12], 2, 3))
+    pass
 
 
 

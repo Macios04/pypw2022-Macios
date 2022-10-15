@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, Counter
 def calculate_freq(sentence):
     freq = {}
     for word in sentence.lower().split():
@@ -15,6 +15,12 @@ def calculate_freq_2(sentence):
     return freq
 
 
+def calculate_freq_3(sentence):
+    return Counter(sentence.lower().split())
+
+
+
 if __name__ == "__main__":
     print(calculate_freq("This is a simple text"))
     print(calculate_freq_2("This is a simple text text"))
+    print(calculate_freq_3("This is a simple text text"))

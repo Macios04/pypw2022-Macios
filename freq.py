@@ -1,4 +1,7 @@
 from collections import defaultdict, Counter
+from string import punctuation
+
+
 def calculate_freq(sentence):
     freq = {}
     for word in sentence.lower().split():
@@ -15,12 +18,34 @@ def calculate_freq_2(sentence):
     return freq
 
 
-def calculate_freq_3(sentence):
-    return Counter(sentence.lower().split())
+class FileFreqCounter:
+    def __init__(self, path):
+        self.path = path
+        self.counter = Counter()
+        self.symbols = set(punctuation)
+
+    def read_lines(self):
+        with open(self.path) as f:  # r , w , a - tryb otwarcia pliku read, write, append
+            return [line.replace("]n", "") for line in f]
+    def remove_punctuation(self, sentence):
+
+        for ch in sentence:
+            if ch in self.symbols:
+                sentence = sentence.replace(ch, " ")
+        return sentence
+    def calculate_freq_3(self):
+        sentences = self.read_lines()
+        self.counter = Counter()
+        for sentence in sentences:
+            cleaned = self.remove_punctuation(sentence)
+            self.counter += Counter(cleaned.lower().split())
+        return self.counter
+    def most_common(self, n=3):
+        self.calculate_freq_3()
+        return self.counter.most_common(n)
 
 
 
 if __name__ == "__main__":
-    print(calculate_freq("This is a simple text"))
-    print(calculate_freq_2("This is a simple text text"))
-    print(calculate_freq_3("This is a simple text text"))
+    file_counter = FileFreqCounter("story.txt")
+    print(file_counter.most_common(5))
